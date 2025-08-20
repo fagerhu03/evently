@@ -1,11 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:evently/screens/intro/on_boreding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:evently/providers/theme_provider.dart';
-import 'package:evently/screens/home/home_screen.dart';
-import 'package:evently/screens/register/login_screen.dart';
 import 'dart:ui' as ui;
 
 class IntroductionScreen extends StatelessWidget {
@@ -188,28 +187,26 @@ class IntroductionScreen extends StatelessWidget {
                 ),
               ],
             ),
-            Container(
+            SizedBox(
               width: 1.sw,
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, LoginScreen.routeName);
+                  Navigator.pushReplacementNamed(context, OnboardingScreen.routeName);
                 },
-                child: Container(
-                  child: Text(
-                    "intro_btn".tr(),
-                    style: GoogleFonts.inter(
-                      fontSize: 20.sp,
-                      fontWeight: FontWeight.w500,
-
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color(0xFF5669FF),
                   padding: EdgeInsets.symmetric(vertical: 16.h),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(16.r),
+                  ),
+                ),
+                child: Text(
+                  "intro_btn".tr(),
+                  style: GoogleFonts.inter(
+                    fontSize: 20.sp,
+                    fontWeight: FontWeight.w500,
+
+                    color: Colors.white,
                   ),
                 ),
               ),
